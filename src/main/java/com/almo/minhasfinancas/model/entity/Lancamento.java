@@ -2,6 +2,7 @@ package com.almo.minhasfinancas.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 import com.almo.minhasfinancas.enums.StatusLancamento;
 import com.almo.minhasfinancas.enums.TipoLancamento;
@@ -31,7 +32,7 @@ public class Lancamento {
 	}
 
 	public Lancamento(Long id, String descricao, Integer mes, Integer ano, Usuario usuario, BigDecimal valor,
-			LocalDate dataCadastro, TipoLancamento tipo, StatusLancamento status) {
+			Date dataCadastro, TipoLancamento tipo, StatusLancamento status) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
@@ -67,7 +68,7 @@ public class Lancamento {
 	
 	@Column(name = "data_cadastro")
 //	@Convert(converter =  Jsr310Converters.LocalDateToDateConverter.class)
-	private LocalDate dataCadastro;
+	private Date dataCadastro;
 	
 	@Column(name = "tipo")
 	@Enumerated(value = EnumType.STRING)
@@ -125,11 +126,11 @@ public class Lancamento {
 		this.valor = valor;
 	}
 
-	public LocalDate getDataCadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(LocalDate dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 
